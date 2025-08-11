@@ -4,9 +4,11 @@ let listaAmigos = [];
 let listaNomesSorteados = [];
 let nome;
 
+//função principal que adiciona o nome informado a uma lista
+
 function adicionarAmigo(){
     
-    nome = document.getElementById('amigo').value;
+    nome = document.getElementById('amigo').value.toLowerCase().trim();
     if (nome == ''){
 
         alert('Campo vazio! Por favor, insira um nome válido');
@@ -19,15 +21,13 @@ function adicionarAmigo(){
         return;
 
     } else {
-
+        nome = primeiraLetraMaiuscula(nome);
         listaAmigos.push(nome);
         console.log(nome);
         console.log(listaAmigos);
     }
 
     
-    
-
     document.getElementById('listaAmigos').innerHTML += '<li>' + nome + '</li>';
 
     limparCampo();
@@ -35,7 +35,9 @@ function adicionarAmigo(){
     
 }
 
-
+//Função que sorteia um dos nomes da lista
+//Acabei reutilizando a função criada para sortear números do jogo do número secreto
+//que foi desenvolvido anteriormente no curso da Alura
 function sortearAmigo(){
 
     if (listaAmigos.length < 3){
@@ -60,17 +62,21 @@ function sortearAmigo(){
     
 }
 
+
+//Função que limpa o campo onde se insere o nome
 function limparCampo(){
     nome = document.getElementById('amigo');
     nome.value = ''
 }
 
-function exibirTextoNaTela(tag, texto){
-    let campo = document.querySelector(tag);
-    campo.innerHTML = texto;
+
+//função que converte strings para sempre deixar o primeiro caractere maiúsculo e o resto minúsculo
+function primeiraLetraMaiuscula(str) {
+  if (typeof str !== 'string' || str.length === 0) {
+    return str; // Retorna a string original se não for uma string ou estiver vazia
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
-
-
 
 
 /*
@@ -95,6 +101,14 @@ function atualizarLista( texto){
    // };
     
 
+}
+
+
+//função que exibe texto na tela
+//não utilizada
+function exibirTextoNaTela(tag, texto){
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto;
 }
 */
 
