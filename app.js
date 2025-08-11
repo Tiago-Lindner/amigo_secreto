@@ -78,37 +78,3 @@ function primeiraLetraMaiuscula(str) {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-
-/*
-    //Inicialmente fiz uma função pra atualizar a lista, 
-    // mas era complicada demais quando dava pra ser resolvida em uma linha
-    //além de não funcionar, kkkkkk
-
-function atualizarLista( texto){
-    let campo = document.getElementById('listaAmigos');
-    console.log('dentro do atualizar lista');
-    //console.log(campo.textContent );
-    console.log(texto);
-    //for (const element of texto) {    
-          
-        let novoNome = document.createElement('li');
-        novoNome.textContent = texto;
-        console.log(novoNome.innerHTML);
-        campo.innerHTML = novoNome;
-
-
-       console.log(campo.innerHTML);
-   // };
-    
-
-}
-
-
-//função que exibe texto na tela
-//não utilizada
-function exibirTextoNaTela(tag, texto){
-    let campo = document.querySelector(tag);
-    campo.innerHTML = texto;
-}
-*/
-
